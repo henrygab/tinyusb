@@ -92,7 +92,7 @@ jobs:
         ./.github/workflows/codeql-buildscript.sh
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
         upload: false
@@ -123,7 +123,7 @@ jobs:
         output: ${{ steps.step1.outputs.sarif-output }}/cpp.sarif
 
     - name: Upload SARIF
-      uses: github/codeql-action/upload-sarif@v2
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: ${{ steps.step1.outputs.sarif-output }}
         category: "/language:${{matrix.language}}"
