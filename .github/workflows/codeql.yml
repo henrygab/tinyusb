@@ -12,6 +12,7 @@
 name: "CodeQL"
 
 on:
+  workflow_dispatch:
   push:
     branches: [ 'master' ]
     paths:
@@ -28,8 +29,6 @@ on:
       - 'lib/**'
       - 'hw/**'
       - '.github/workflows/codeql.yml'
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   analyze:
